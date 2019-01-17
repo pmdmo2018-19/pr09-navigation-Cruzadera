@@ -13,5 +13,90 @@ Phasellus aliquam aliquam ante eget iaculis. Praesent ultrices feugiat sem, non 
     <string name="main_chiquito_ipsum" translatable="false">Lorem fistrum no te digo trigo por no llamarte Rodrigor hasta luego Lucas torpedo ese que llega ese hombree tiene musho peligro a gramenawer al ataquerl. No puedor llevame al sircoo caballo blanco caballo negroorl no te digo trigo por no llamarte Rodrigor apetecan. Caballo blanco caballo negroorl se calle ustée ese hombree papaar papaar. No te digo trigo por no llamarte Rodrigor ahorarr por la gloria de mi madre benemeritaar de la pradera te voy a borrar el cerito benemeritaar fistro a peich. Papaar papaar pupita diodeno me cago en tus muelas por la gloria de mi madre fistro pupita. Quietooor diodeno ese hombree por la gloria de mi madre pecador de la pradera quietooor.
 
 Ahorarr ese que llega a wan diodenoo ese pedazo de te va a hasé pupitaa te voy a borrar el cerito a peich. Quietooor se calle ustée benemeritaar torpedo ahorarr. Por la gloria de mi madre al ataquerl no te digo trigo por no llamarte Rodrigor amatomaa amatomaa no te digo trigo por no llamarte Rodrigor ahorarr. Sexuarl condemor a peich a wan de la pradera ahorarr llevame al sircoo torpedo. A peich mamaar quietooor pecador apetecan jarl hasta luego Lucas te va a hasé pupitaa va usté muy cargadoo ese pedazo de te voy a borrar el cerito. Apetecan me cago en tus muelas mamaar pupita. A peich fistro sexuarl no puedor está la cosa muy malar ahorarr. Fistro al ataquerl me cago en tus muelas pecador ahorarr no puedor benemeritaar apetecan. Apetecan de la pradera a gramenawer apetecan diodenoo la caidita.</string>
-    <string name="app_name">Toolbar</string>
+    <string name="app_name">Lorem</string>
+    <string name="title_menuSettings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="prefDefault">latin</string>
+    <string name="prefDependency_key">false</string>
+    <string name="prefType_dialogTitle">Lorem Type</string>
+    <string name="prefLoremType_key">loremType</string>
+    <string name="prefConnectionType_title">Lorem type</string>
+    <string name="lblDetail">This is detail fragment</string>
+    <string name="titleDetailFragment">Detail</string>
+    <string name="titleSettingsFragment">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
 </resources>

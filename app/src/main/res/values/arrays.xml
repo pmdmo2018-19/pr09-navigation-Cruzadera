@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="prefLoremType_entries">
+        <item>latin</item>
+        <item>chiquito</item>
+    </string-array>
+    <string-array name="prefLoremType_entryValues">
+        <item>@string/main_latin_ipsum</item>
+        <item>@string/main_chiquito_ipsum</item>
+    </string-array>
+</resources>
