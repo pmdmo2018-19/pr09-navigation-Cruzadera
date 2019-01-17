@@ -3,7 +3,6 @@ package es.iessaladillo.pedrojoya.pr08.ui.main;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -76,7 +75,7 @@ public class MainFragment extends Fragment implements SharedPreferences.OnShared
 
     private void setupToolbar(View view) {
         Toolbar toolbar = ViewCompat.requireViewById(view, R.id.toolbar);
-        toolbar.setTitle(R.string.app_name);
+        toolbar.setTitle(R.string.fragmentMainTittle);
         toolbar.inflateMenu(R.menu.fragment_main);
         toolbar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {

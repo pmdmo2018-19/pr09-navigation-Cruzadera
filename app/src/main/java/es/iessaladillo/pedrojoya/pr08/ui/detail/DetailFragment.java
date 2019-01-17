@@ -71,7 +71,7 @@ public class DetailFragment extends Fragment {
     }
 
     private void showMessage() {
-        Snackbar.make(fab,"Se ha pulsado en el botón de guardar" , Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(fab,getString(R.string.txtSave) , Snackbar.LENGTH_SHORT).show();
     }
 
 }
