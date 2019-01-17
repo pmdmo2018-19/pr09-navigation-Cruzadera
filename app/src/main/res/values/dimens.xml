@@ -1,3 +1,7 @@
 <resources>
     <dimen name="activity_detail_toolbar_height">@dimen/abc_action_bar_default_height_material</dimen>
+    <dimen name="lbltxtDetail_padding">10dp</dimen>
+    <dimen name="fab_marginBottom">16dp</dimen>
+    <dimen name="fab_marginEnd">16dp</dimen>
+    <dimen name="lblLorem_margin">8dp</dimen>
 </resources>

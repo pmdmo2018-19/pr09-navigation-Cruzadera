@@ -30,7 +30,6 @@ import es.iessaladillo.pedrojoya.pr08.utils.FragmentUtils;
 
 public class MainFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener{
 
-    private MainFragmentViewModel mViewModel;
     private TextView lblLorem;
     private SharedPreferences sharedPreferences;
 
@@ -48,10 +47,8 @@ public class MainFragment extends Fragment implements SharedPreferences.OnShared
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(MainFragmentViewModel.class);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
         setupViews();
-        // TODO: Use the ViewModel
     }
 
     @Override

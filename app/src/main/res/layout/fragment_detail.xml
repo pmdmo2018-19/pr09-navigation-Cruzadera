@@ -41,7 +41,7 @@
             android:id="@+id/lblText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="@dimen/lbltxtDetail_padding"
             android:text="@string/lblDetail"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"/>
@@ -52,8 +52,8 @@
         android:id="@+id/fabSave"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="@dimen/fab_marginBottom"
+        android:layout_marginEnd="@dimen/fab_marginEnd"
         app:srcCompat="@drawable/ic_save_white_24dp"
         app:layout_anchor="@id/appbarLayout"
         app:layout_anchorGravity="bottom|right|end"/>
