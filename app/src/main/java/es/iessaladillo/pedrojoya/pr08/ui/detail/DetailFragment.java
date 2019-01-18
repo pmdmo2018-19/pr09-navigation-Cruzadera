@@ -14,23 +14,27 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.fragment.app.FragmentManager;
 import es.iessaladillo.pedrojoya.pr08.R;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DetailFragment extends Fragment {
 
+    ActionBar actionBar;
 
     private FloatingActionButton fab;
 
     public DetailFragment() {
-        // Required empty public constructor
     }
 
     public static DetailFragment newInstance() {
@@ -41,7 +45,6 @@ public class DetailFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
@@ -54,7 +57,14 @@ public class DetailFragment extends Fragment {
     private void setupViews(View view) {
         setupToolbar(view);
         fab = ViewCompat.requireViewById(view, R.id.fabSave);
-        fab.setOnClickListener(v -> showMessage());
+        fab.setOnClickListener(v -> {showMessage(); goBack();});
+    }
+
+    private void goBack() {
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager != null) {
+            fragmentManager.popBackStack();
+        }
     }
 
     private void setupToolbar(View view) {
@@ -62,8 +72,8 @@ public class DetailFragment extends Fragment {
                 R.id.collapsingToolbar);
         collapsingToolbarLayout.setTitle(getString(R.string.titleDetailFragment));
         Toolbar toolbar = ViewCompat.requireViewById(view, R.id.toolbarDetail);
+        actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         ((AppCompatActivity)requireActivity()).setSupportActionBar(toolbar);
-        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(getString(R.string.titleSettingsFragment));
@@ -71,7 +81,7 @@ public class DetailFragment extends Fragment {
     }
 
     private void showMessage() {
-        Snackbar.make(fab,getString(R.string.txtSave) , Snackbar.LENGTH_SHORT).show();
+        Toast.makeText(requireContext(), getString(R.string.txtSave), LENGTH_SHORT).show();
     }
 
 }
