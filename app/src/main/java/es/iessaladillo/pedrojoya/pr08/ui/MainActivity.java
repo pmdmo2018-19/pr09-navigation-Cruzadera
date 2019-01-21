@@ -1,9 +1,10 @@
-package es.iessaladillo.pedrojoya.pr08;
+package es.iessaladillo.pedrojoya.pr08.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import es.iessaladillo.pedrojoya.pr08.R;
 import es.iessaladillo.pedrojoya.pr08.ui.main.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
