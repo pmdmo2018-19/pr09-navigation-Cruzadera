@@ -68,16 +68,10 @@ public class DetailFragment extends Fragment {
     }
 
     private void setupToolbar(View view) {
-        CollapsingToolbarLayout collapsingToolbarLayout = ViewCompat.requireViewById(view,
-                R.id.collapsingToolbar);
-        collapsingToolbarLayout.setTitle(getString(R.string.titleDetailFragment));
         Toolbar toolbar = ViewCompat.requireViewById(view, R.id.toolbarDetail);
-        actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        ((AppCompatActivity)requireActivity()).setSupportActionBar(toolbar);
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(getString(R.string.titleSettingsFragment));
-        }
+        toolbar.setTitle(R.string.titleDetailFragment);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        toolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
     }
 
     private void showMessage() {

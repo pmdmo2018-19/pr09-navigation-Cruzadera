@@ -2,7 +2,6 @@ package es.iessaladillo.pedrojoya.pr08.ui.main;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,25 +14,31 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 import es.iessaladillo.pedrojoya.pr08.R;
-import es.iessaladillo.pedrojoya.pr08.ui.detail.DetailFragment;
-import es.iessaladillo.pedrojoya.pr08.ui.settings.SettingsFragment;
-import es.iessaladillo.pedrojoya.pr08.utils.FragmentUtils;
 
 public class MainFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener{
 
     private TextView lblLorem;
     private SharedPreferences sharedPreferences;
+    private NavController navController;
+    private Toolbar toolbar;
 
-    public static MainFragment newInstance() {
-        return new MainFragment();
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @Nullable
@@ -46,6 +51,7 @@ public class MainFragment extends Fragment implements SharedPreferences.OnShared
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        navController = NavHostFragment.findNavController(this);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
         setupViews();
     }
@@ -54,6 +60,12 @@ public class MainFragment extends Fragment implements SharedPreferences.OnShared
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return NavigationUI.onNavDestinationSelected(item, navController)
+                || super.onOptionsItemSelected(item);
     }
 
     private void setupViews(){
@@ -69,30 +81,32 @@ public class MainFragment extends Fragment implements SharedPreferences.OnShared
     }
 
     private void navigateToDetail() {
-        FragmentUtils.replaceFragmentAddToBackstack(requireActivity().getSupportFragmentManager(),
-                R.id.container, DetailFragment.newInstance(), DetailFragment.class.getSimpleName(), DetailFragment.class.getSimpleName(), FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        navController.navigate(R.id.action_mainFragment_to_detailFragment);
     }
 
     private void setupToolbar(View view) {
-        Toolbar toolbar = ViewCompat.requireViewById(view, R.id.toolbar);
-        toolbar.setTitle(R.string.fragmentMainTittle);
+        toolbar = ViewCompat.requireViewById(view, R.id.toolbar);
         toolbar.inflateMenu(R.menu.fragment_main);
         toolbar.setOnMenuItemClickListener(item -> {
             switch (item.getItemId()) {
-                case R.id.mnuSettings:
+                case R.id.action_mainFragment_to_settingsFragment:
                     navigateToSettings();
                     return true;
                 default:
                     return false;
             }
         });
+        setupAppBar();
+    }
+
+    private void setupAppBar(){
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                navController.getGraph()).build();
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
     }
 
     private void navigateToSettings() {
-        FragmentUtils.replaceFragmentAddToBackstack(requireActivity().getSupportFragmentManager(),
-                R.id.container, SettingsFragment.newInstance(),
-                SettingsFragment.class.getSimpleName(), SettingsFragment.class.getSimpleName(),
-                FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        navController.navigate(R.id.action_mainFragment_to_settingsFragment);
     }
 
     private void displayLorem() {

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/mnuSettings"
+        android:id="@+id/action_mainFragment_to_settingsFragment"
         android:title="@string/title_menuSettings"
         app:showAsAction="never" />
 </menu>
